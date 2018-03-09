@@ -1,0 +1,875 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:435",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 13,
+  "iteration": 1520635967626,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:474",
+          "refId": "A",
+          "target": "aliasByNode(aliasSub($Host.load.*.midterm, '(-Host-)', '-'), 0)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Load medterm",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 9,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:547",
+          "refCount": 3,
+          "refId": "A",
+          "target": "aliasByNode(divideSeries(AMS-Host-1.memory.memory-used, #B), 0)",
+          "targetFull": "aliasByNode(divideSeries(AMS-Host-1.memory.memory-used, sumSeries(AMS-Host-1.memory.memory-[fubc]*)), 0)"
+        },
+        {
+          "$$hashKey": "object:548",
+          "hide": true,
+          "refCount": 3,
+          "refId": "B",
+          "target": "sumSeries(AMS-Host-1.memory.memory-[fubc]*)"
+        },
+        {
+          "$$hashKey": "object:549",
+          "refCount": 2,
+          "refId": "C",
+          "target": "aliasByNode(divideSeries(AMS-Host-2.memory.memory-used, #D), 0)",
+          "targetFull": "aliasByNode(divideSeries(AMS-Host-2.memory.memory-used, sumSeries(AMS-Host-2.memory.memory-[fubc]*)), 0)"
+        },
+        {
+          "$$hashKey": "object:550",
+          "hide": true,
+          "refCount": 2,
+          "refId": "D",
+          "target": "sumSeries(AMS-Host-2.memory.memory-[fubc]*)"
+        },
+        {
+          "$$hashKey": "object:551",
+          "refCount": 2,
+          "refId": "E",
+          "target": "aliasByNode(divideSeries(FR-Host-1.memory.memory-used, #F), 0)",
+          "targetFull": "aliasByNode(divideSeries(FR-Host-1.memory.memory-used, sumSeries(FR-Host-1.memory.memory-[fubc]*)), 0)"
+        },
+        {
+          "$$hashKey": "object:552",
+          "hide": true,
+          "refCount": 2,
+          "refId": "F",
+          "target": "sumSeries(FR-Host-1.memory.memory-[fubc]*)"
+        },
+        {
+          "$$hashKey": "object:553",
+          "refCount": 3,
+          "refId": "G",
+          "target": "aliasByNode(divideSeries(FR-Host-2.memory.memory-used, #H), 0)",
+          "targetFull": "aliasByNode(divideSeries(FR-Host-2.memory.memory-used, sumSeries(FR-Host-2.memory.memory-[fubc]*)), 0)"
+        },
+        {
+          "$$hashKey": "object:554",
+          "hide": true,
+          "refCount": 2,
+          "refId": "H",
+          "target": "sumSeries(FR-Host-2.memory.memory-[fubc]*)"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "warning",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 60
+        },
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 90
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memory",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percentunit",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:770",
+          "refCount": 3,
+          "refId": "A",
+          "target": "aliasSub(aliasByNode(divideSeries(AMS-Host-1.df-root.df_complex-free, #B), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(AMS-Host-1.df-root.df_complex-free, sumSeries(AMS-Host-1.df-root.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "$$hashKey": "object:771",
+          "hide": true,
+          "refCount": 3,
+          "refId": "B",
+          "target": "sumSeries(AMS-Host-1.df-root.df_complex-[fu]*)"
+        },
+        {
+          "$$hashKey": "object:772",
+          "refCount": 2,
+          "refId": "C",
+          "target": "aliasSub(aliasByNode(divideSeries(AMS-Host-2.df-root.df_complex-free, #D), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(AMS-Host-2.df-root.df_complex-free, sumSeries(AMS-Host-2.df-root.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "$$hashKey": "object:773",
+          "hide": true,
+          "refCount": 2,
+          "refId": "D",
+          "target": "sumSeries(AMS-Host-2.df-root.df_complex-[fu]*)"
+        },
+        {
+          "$$hashKey": "object:774",
+          "refCount": 2,
+          "refId": "E",
+          "target": "aliasSub(aliasByNode(divideSeries(FR-Host-1.df-root.df_complex-free, #F), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(FR-Host-1.df-root.df_complex-free, sumSeries(FR-Host-1.df-root.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "$$hashKey": "object:775",
+          "hide": true,
+          "refCount": 2,
+          "refId": "F",
+          "target": "sumSeries(FR-Host-1.df-root.df_complex-[fu]*)"
+        },
+        {
+          "$$hashKey": "object:776",
+          "refCount": 3,
+          "refId": "G",
+          "target": "aliasSub(aliasByNode(divideSeries(FR-Host-2.df-root.df_complex-free, #H), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(FR-Host-2.df-root.df_complex-free, sumSeries(FR-Host-2.df-root.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "$$hashKey": "object:777",
+          "hide": true,
+          "refCount": 3,
+          "refId": "H",
+          "target": "sumSeries(FR-Host-2.df-root.df_complex-[fu]*)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "DF /",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percentunit",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 12,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 2,
+          "refId": "A",
+          "target": "aliasSub(aliasByNode(divideSeries(AMS-Host-1.df-home.df_complex-free, #B), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(AMS-Host-1.df-home.df_complex-free, sumSeries(AMS-Host-1.df-home.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "hide": true,
+          "refCount": 2,
+          "refId": "B",
+          "target": "sumSeries(AMS-Host-1.df-home.df_complex-[fu]*)"
+        },
+        {
+          "refCount": 2,
+          "refId": "C",
+          "target": "aliasSub(aliasByNode(divideSeries(AMS-Host-2.df-home.df_complex-free, #D), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(AMS-Host-2.df-home.df_complex-free, sumSeries(AMS-Host-2.df-home.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "hide": true,
+          "refCount": 2,
+          "refId": "D",
+          "target": "sumSeries(AMS-Host-2.df-home.df_complex-[fu]*)"
+        },
+        {
+          "refCount": 2,
+          "refId": "E",
+          "target": "aliasSub(aliasByNode(divideSeries(FR-Host-1.df-home.df_complex-free, #F), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(FR-Host-1.df-home.df_complex-free, sumSeries(FR-Host-1.df-home.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "hide": true,
+          "refCount": 3,
+          "refId": "F",
+          "target": "sumSeries(FR-Host-1.df-home.df_complex-[fu]*)"
+        },
+        {
+          "refCount": 3,
+          "refId": "G",
+          "target": "aliasSub(aliasByNode(divideSeries(FR-Host-2.df-home.df_complex-free, #H), 0), '(-Host-)', ' ')",
+          "targetFull": "aliasSub(aliasByNode(divideSeries(FR-Host-2.df-home.df_complex-free, sumSeries(FR-Host-2.df-home.df_complex-[fu]*)), 0), '(-Host-)', ' ')"
+        },
+        {
+          "hide": true,
+          "refCount": 2,
+          "refId": "H",
+          "target": "sumSeries(FR-Host-2.df-home.df_complex-[fu]*)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "DF /home",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percentunit",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 5
+      },
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:1001",
+          "refId": "A",
+          "target": "aliasSub(groupByNode($Host.cpu*.cpu-idle, 0, 'avg'), '(-Host-)', '-')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU idle",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 5
+      },
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:1057",
+          "refId": "A",
+          "target": "aliasSub(groupByNode($Host.cpu*.cpu-wait, 0, 'avg'), '(-Host-)', '-')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU wait",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 12,
+        "y": 5
+      },
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:1113",
+          "refId": "A",
+          "target": "aliasSub(groupByNode($Host.cpu*.cpu-softirq, 0, 'avg'), '(-Host-)', '-')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU softirq",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 18,
+        "y": 5
+      },
+      "id": 11,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:1169",
+          "refId": "A",
+          "target": "aliasSub(groupByNode($Host.cpu*.cpu-interrupt, 0, 'avg'), '(-Host-)', '-')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU interrupt",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "local",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Host",
+        "multi": true,
+        "name": "Host",
+        "options": [],
+        "query": "*-Host-*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now-5m"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Servers",
+  "uid": "DOgaWngiz",
+  "version": 20
+}
